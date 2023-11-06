@@ -29,9 +29,22 @@ b:8
 c:16
 The roots are -4.0 and -4.0
 """
-import os
-os.system('cls')
-
+import math 
 
 print("Enter in the coefficients for a quadratic equation in the format:")
-print("  ax^2 + bx + c = 0")
+print("ax^2 + bx + c = 0")
+
+while True:
+    a = int(input("a: ")) 
+    b = int(input("b: ")) 
+    c = int(input("c: ")) 
+
+    try:
+        d = b**2 - 4 * a * c 
+
+        x1 = round((-b+math.sqrt(d))/(2*a), 2) 
+        x2 = round((-b-math.sqrt(d))/(2*a), 2) 
+        print(f"The roots are: {x1} and {x2}") 
+        break
+    except Exception as e:
+        print("There are no roots")
